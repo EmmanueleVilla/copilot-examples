@@ -96,7 +96,7 @@ function App() {
         <section id="csv" className="card">
           <header className="card-header">
             <p className="eyebrow">Fixer</p>
-            <h2 className="card-title">CSV parser rapido</h2>
+            <h2 className="card-title">CSV parser</h2>
           </header>
 
           <form className="form" onSubmit={handleCsvParse} noValidate>
@@ -140,7 +140,12 @@ function App() {
             </div>
           )}
         </section>
-
+        <section id="csv" className="card">
+          <header className="card-header">
+            <p className="eyebrow">Tests</p>
+            <h2 className="card-title">Setup and write tests</h2>
+          </header>
+        </section>
       </main>
     </div>
   )
