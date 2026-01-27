@@ -18,13 +18,13 @@ function App() {
         <section id="tests" className="card">
           <header className="card-header">
             <p className="eyebrow">Example: tests</p>
-            <h2 className="card-title">Setup and write tests</h2>
+            <h2 className="card-title">Setup and write tests using /setupTests and /tests</h2>
           </header>
         </section>
         <section id="tests" className="card">
           <header className="card-header">
             <p className="eyebrow">Example: commit messages</p>
-            <h2 className="card-title">Write commit messages that follow conventional commits</h2>
+            <h2 className="card-title">Generate commit with custom options using github.copilot.chat.commitMessageGeneration.instructions</h2>
           </header>
         </section>
       </main>
