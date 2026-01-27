@@ -171,6 +171,53 @@ body {
   color: #e5e7eb;
 }
 
+.apod-result {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.apod-title {
+  margin: 0 0 4px;
+  font-size: 18px;
+  color: #f9fafb;
+}
+
+.apod-date {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.apod-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.apod-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.apod-explanation {
+  margin: 0 0 8px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.apod-copyright {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: #94a3b8;
+}
+
 .table-wrap {
   margin-top: 16px;
   overflow-x: auto;
