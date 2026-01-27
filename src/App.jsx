@@ -2,6 +2,7 @@ import './App.css'
 import EmailValidator from './components/EmailValidator'
 import CsvParser from './components/CsvParser'
 import MergeSort from './components/MergeSort'
+import ProcessNumbers from './components/ProcessNumbers'
 import ApodFetcher from './components/ApodFetcher'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <EmailValidator />
         <CsvParser />
         <MergeSort />
+        <ProcessNumbers />
         <ApodFetcher />
 
         <section id="tests" className="card">

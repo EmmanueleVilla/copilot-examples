@@ -218,6 +218,36 @@ body {
   color: #94a3b8;
 }
 
+.results-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.result-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.result-label {
+  margin: 0 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.result-value {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
 .table-wrap {
   margin-top: 16px;
   overflow-x: auto;
