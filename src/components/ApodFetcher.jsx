@@ -16,7 +16,7 @@ export default function ApodFetcher() {
         <p className="eyebrow">Agentic coding</p>
         <h2 className="card-title">NASA APOD (Astronomy Picture of the Day)</h2>
         <p className="card-subhead">
-          Task più complicato, che richiede più passaggi
+          More complex task, which requires multiple steps
         </p>
       </header>
 

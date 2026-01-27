@@ -11,14 +11,14 @@ function App() {
       <main className="content">
         <section id="tests" className="card">
           <header className="card-header">
-            <p className="eyebrow">Lo strumento</p>
-            <h2 className="card-title">Cos'è copilot</h2>
+            <p className="eyebrow">The tool</p>
+            <h2 className="card-title">What is copilot</h2>
             <ul>
-              <li>Assistente di programmazione sviluppato da GitHub e OpenAI.</li>
-              <li>Integrato negli IDE: VS Code, JetBrains...</li>
-              <li>Utilizza LLM predittivi: predice codice dal contesto.</li>
-              <li>Vantaggi: velocizza, riduce boilerplate, aiuta con nuove API.</li>
-              <li>Svantaggi: possibili errori, sicurezza, dipendenza. Richiede revisione umana!!</li>
+              <li>Programming assistant developed by GitHub and OpenAI.</li>
+              <li>Integrated into IDEs: VS Code, JetBrains...</li>
+              <li>Uses predictive LLMs: predicts code from context.</li>
+              <li>Advantages: speeds up, reduces boilerplate, helps with new APIs.</li>
+              <li>Disadvantages: possible errors, security, dependency. Requires human review!!</li>
             </ul>
           </header>
         </section>

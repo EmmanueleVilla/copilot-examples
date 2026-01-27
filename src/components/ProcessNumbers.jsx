@@ -10,7 +10,7 @@ export default function ProcessNumbers() {
         const raw = numbersInput.trim()
 
         if (!raw) {
-            setProcessStatus({ state: 'error', message: 'Inserisci dei numeri prima di processare.' })
+            setProcessStatus({ state: 'error', message: 'Enter numbers before processing.' })
             setResults(null)
             return
         }
@@ -28,13 +28,13 @@ export default function ProcessNumbers() {
 
 
         if (parsed.some((n) => isNaN(n))) {
-            setProcessStatus({ state: 'error', message: 'Alcuni valori non sono numeri validi.' })
+            setProcessStatus({ state: 'error', message: 'Some values are not valid numbers.' })
             setResults(null)
             return
         }
 
         if (parsed.length === 0) {
-            setProcessStatus({ state: 'error', message: 'Nessun numero trovato.' })
+            setProcessStatus({ state: 'error', message: 'No numbers found.' })
             setResults(null)
             return
         }
@@ -61,7 +61,7 @@ export default function ProcessNumbers() {
 
 
         setResults({ sum, avg, max, min, count: parsed.length })
-        setProcessStatus({ state: 'success', message: `Elaborazione completata: ${parsed.length} numeri.` })
+        setProcessStatus({ state: 'success', message: `Processing completed: ${parsed.length} numbers.` })
     }
 
     return (
@@ -70,7 +70,7 @@ export default function ProcessNumbers() {
                 <p className="eyebrow">Example: refactor</p>
                 <h2 className="card-title">Process numbers</h2>
                 <p className="card-subhead">
-                    Codice che funziona, ma è scritto male
+                    Code that works, but is written poorly
                 </p>
             </header>
 

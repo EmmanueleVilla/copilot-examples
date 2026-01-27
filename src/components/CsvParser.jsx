@@ -10,7 +10,7 @@ export default function CsvParser() {
     const raw = csvInput.trim()
 
     if (!raw) {
-      setCsvStatus({ state: 'error', message: 'Inserisci del testo CSV prima di parsare.' })
+      setCsvStatus({ state: 'error', message: 'Enter CSV text before parsing.' })
       setTableData([])
       return
     }
@@ -19,7 +19,7 @@ export default function CsvParser() {
     const rows = lines.map((line) => line.split(',').map((cell) => cell.trim()))
 
     if (rows.length === 0) {
-      setCsvStatus({ state: 'error', message: 'Nessuna riga trovata.' })
+      setCsvStatus({ state: 'error', message: 'No rows found.' })
       setTableData([])
       return
     }
@@ -33,7 +33,7 @@ export default function CsvParser() {
     })
 
     setTableData(normalized)
-    setCsvStatus({ state: 'success', message: `Parse completato: ${normalized.length} righe, ${columnCount} colonne.` })
+    setCsvStatus({ state: 'success', message: `Parsing completed: ${normalized.length} rows, ${columnCount} columns.` })
   }
 
   return (
