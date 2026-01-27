@@ -67,7 +67,7 @@ export default function ProcessNumbers() {
     return (
         <section id="process" className="card">
             <header className="card-header">
-                <p className="eyebrow">Utility</p>
+                <p className="eyebrow">Example: refactor</p>
                 <h2 className="card-title">Process numbers</h2>
                 <p className="card-subhead">
                     Inserisci numeri separati da virgola e calcola somma, massimo, minimo e media.
