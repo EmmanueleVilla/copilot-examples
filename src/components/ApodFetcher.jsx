@@ -16,7 +16,7 @@ export default function ApodFetcher() {
         <p className="eyebrow">Agentic coding</p>
         <h2 className="card-title">NASA APOD (Astronomy Picture of the Day)</h2>
         <p className="card-subhead">
-          Enter your NASA API key to fetch today's astronomy picture. Get a free key at api.nasa.gov.
+          Task più complicato, che richiede più passaggi
         </p>
       </header>
 

@@ -70,7 +70,7 @@ export default function ProcessNumbers() {
                 <p className="eyebrow">Example: refactor</p>
                 <h2 className="card-title">Process numbers</h2>
                 <p className="card-subhead">
-                    Inserisci numeri separati da virgola e calcola somma, massimo, minimo e media.
+                    Codice che funziona, ma è scritto male
                 </p>
             </header>
 

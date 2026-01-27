@@ -61,9 +61,9 @@ export default function MergeSort() {
     <section id="sort" className="card">
       <header className="card-header">
         <p className="eyebrow">Example: explain 😵‍💫</p>
-        <h2 className="card-title">Mergesort numbers</h2>
+        <h2 className="card-title">Mergesort</h2>
         <p className="card-subhead">
-          Inserisci numeri separati da virgola e ordinali con mergesort.
+          Codice difficile da spiegare :(
         </p>
       </header>
 
