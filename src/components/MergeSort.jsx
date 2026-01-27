@@ -38,7 +38,7 @@ export default function MergeSort() {
     const raw = numbersInput.trim()
 
     if (!raw) {
-      setSortStatus({ state: 'error', message: 'Inserisci dei numeri prima di ordinare.' })
+      setSortStatus({ state: 'error', message: 'Enter numbers before sorting.' })
       setSortedNumbers([])
       return
     }
@@ -47,14 +47,14 @@ export default function MergeSort() {
     const parsed = numbers.map((n) => parseFloat(n))
 
     if (parsed.some((n) => isNaN(n))) {
-      setSortStatus({ state: 'error', message: 'Alcuni valori non sono numeri validi.' })
+      setSortStatus({ state: 'error', message: 'Some values are not valid numbers.' })
       setSortedNumbers([])
       return
     }
 
     const sorted = mergesort(parsed)
     setSortedNumbers(sorted)
-    setSortStatus({ state: 'success', message: `Ordinamento completato: ${sorted.length} numeri.` })
+    setSortStatus({ state: 'success', message: `Sorting completed: ${sorted.length} numbers.` })
   }
 
   return (
@@ -63,7 +63,7 @@ export default function MergeSort() {
         <p className="eyebrow">Example: explain 😵‍💫</p>
         <h2 className="card-title">Mergesort</h2>
         <p className="card-subhead">
-          Codice difficile da spiegare :(
+          Code difficult to explain :(
         </p>
       </header>
 
