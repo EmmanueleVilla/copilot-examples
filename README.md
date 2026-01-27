@@ -1,16 +1,45 @@
-# React + Vite
+# GitHub Copilot Demo - Interactive Examples
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project showcases **GitHub Copilot's core capabilities** through interactive, hands-on examples. Each section below can be completed or enhanced during a demonstration to highlight different Copilot features.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a **React + Vite** application with modular components, each demonstrating a specific Copilot functionality:
 
-## React Compiler
+## How to Use
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Start the dev server**: `npm run dev`
+2. **Explore each section** and try Copilot's suggestions for completing or improving the code
+3. **Use Copilot Chat** for explanations of existing algorithms
+4. **Request refactoring** to see how Copilot improves code quality
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Technology Stack
+
+- **React 18** - UI library
+- **Vite** - Build tool with HMR
+- **NASA API** - Astronomy Picture of the Day
+- **ES6+** - Modern JavaScript features
+
+## Copilot Features Demonstrated
+
+| Feature | Example | File |
+|---------|---------|------|
+| **Completions** | Use inline completion to write simple functions | `EmailValidator.jsx` |
+| **FixMe** | Fix bugged functions | `CsvParser.jsx` |
+| **Explain** | Explain hard algorithms to understand them | `MergeSort.jsx` |
+| **Refactor** | Rewrite legacy code | `ProcessNumbers.jsx` |
+| **Agentic coding** | Use agent mode to write more complex stuff | `ApodFetcher.jsx` |
+| **Tests** | Use test commands to setup and write unit tests | `live example` |
+| **Commit** | Generate commit messages | `vscode config` |
+| **Issues** | Assign a github issue to an agent | `live example` |
+
+---
+
+**Purpose**: This project serves as an interactive demonstration scaffold. Use GitHub Copilot to fill in implementations, fix issues, generate tests, and refactor code during live presentations.
