@@ -17,8 +17,14 @@ function App() {
 
         <section id="tests" className="card">
           <header className="card-header">
-            <p className="eyebrow">Tests</p>
+            <p className="eyebrow">Example: tests</p>
             <h2 className="card-title">Setup and write tests</h2>
+          </header>
+        </section>
+        <section id="tests" className="card">
+          <header className="card-header">
+            <p className="eyebrow">Example: commit messages</p>
+            <h2 className="card-title">Write commit messages that follow conventional commits</h2>
           </header>
         </section>
       </main>
