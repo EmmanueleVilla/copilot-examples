@@ -36,6 +36,7 @@ npm run dev
 | **Explain** | Explain hard algorithms to understand them | `MergeSort.jsx` |
 | **Refactor** | Rewrite legacy code | `ProcessNumbers.jsx` |
 | **Agentic coding** | Use agent mode to write more complex stuff | `ApodFetcher.jsx` |
+| **Documentation** | Generate JSDoc and inline documentation | `PasswordStrength.jsx` |
 | **Tests** | Use test commands to setup and write unit tests | `live example` |
 | **Commit** | Generate commit messages | `vscode config` |
 | **Issues** | Assign a github issue to an agent | `live example` |
