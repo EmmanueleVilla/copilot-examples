@@ -15,17 +15,9 @@ export default function ProcessNumbers() {
             return
         }
 
-        var nums = raw.split(',');
-        for (var i = 0; i < nums.length; i++) {
-            nums[i] = parseFloat(nums[i].trim());
-        }
-        var parsed = [];
-        for (var j = 0; j < nums.length; j++) {
-            if (nums[j]) {
-                parsed.push(nums[j]);
-            }
-        }
+        const tokens = raw.split(',').map((s) => s.trim())
 
+<<<<<<< Updated upstream
 
         if (parsed.some((n) => isNaN(n))) {
             setProcessStatus({ state: 'error', message: 'Some values are not valid numbers.' })
@@ -35,33 +27,35 @@ export default function ProcessNumbers() {
 
         if (parsed.length === 0) {
             setProcessStatus({ state: 'error', message: 'No numbers found.' })
+=======
+        if (tokens.every((t) => t === '')) {
+            setProcessStatus({ state: 'error', message: 'Nessun numero trovato.' })
+>>>>>>> Stashed changes
             setResults(null)
             return
         }
 
-        var sum = 0;
-        for (var i = 0; i < parsed.length; i++) {
-            sum = sum + parsed[i];
-        }
-        var avg = sum / parsed.length;
-
-        var max = parsed[0];
-        for (var i = 1; i < parsed.length; i++) {
-            if (parsed[i] > max) {
-                max = parsed[i];
-            }
+        const hasInvalid = tokens.some((t) => t !== '' && Number.isNaN(Number(t)))
+        if (hasInvalid) {
+            setProcessStatus({ state: 'error', message: 'Alcuni valori non sono numeri validi.' })
+            setResults(null)
+            return
         }
 
-        var min = parsed[0];
-        for (var i = 1; i < parsed.length; i++) {
-            if (parsed[i] < min) {
-                min = parsed[i];
-            }
-        }
+        const numbers = tokens.filter((t) => t !== '').map(Number)
 
+        const sum = numbers.reduce((acc, n) => acc + n, 0)
+        const avg = sum / numbers.length
+        const max = Math.max(...numbers)
+        const min = Math.min(...numbers)
 
+<<<<<<< Updated upstream
         setResults({ sum, avg, max, min, count: parsed.length })
         setProcessStatus({ state: 'success', message: `Processing completed: ${parsed.length} numbers.` })
+=======
+        setResults({ sum, avg, max, min, count: numbers.length })
+        setProcessStatus({ state: 'success', message: `Elaborazione completata: ${numbers.length} numeri.` })
+>>>>>>> Stashed changes
     }
 
     return (

@@ -7,7 +7,54 @@ export default function ApodFetcher() {
 
   const handleApodFetch = async (event) => {
     event.preventDefault()
-    
+    const key = apiKey.trim() || 'DEMO_KEY'
+    setApodStatus({ state: 'loading', message: key === 'DEMO_KEY' ? 'Using DEMO_KEY — may be rate-limited.' : 'Fetching APOD...' })
+    setApodData(null)
+
+    const controller = new AbortController()
+    const timeoutMs = 8000
+    const timeout = setTimeout(() => controller.abort(), timeoutMs)
+
+    try {
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${encodeURIComponent(key)}`
+      const res = await fetch(url, { signal: controller.signal })
+      clearTimeout(timeout)
+
+      if (!res.ok) {
+        // try to parse structured error, fall back to text
+        let details = ''
+        try {
+          const body = await res.json()
+          if (body && (body.msg || body.message)) details = body.msg || body.message
+          else details = JSON.stringify(body)
+        } catch (e) {
+          const txt = await res.text().catch(() => '')
+          details = txt || ''
+        }
+
+        if (res.status === 429) throw new Error('Rate limit exceeded. Riprova più tardi.')
+        if (res.status === 503) throw new Error('Servizio non disponibile (API outage).')
+        throw new Error(`${res.status} ${res.statusText}${details ? ' - ' + details : ''}`)
+      }
+
+      let data = await res.json()
+      if (Array.isArray(data)) data = data[0]
+
+      if (!data || typeof data !== 'object' || (!data.url && !data.thumbnail_url && !data.hdurl)) {
+        throw new Error('Unexpected API response')
+      }
+
+      setApodData(data)
+      setApodStatus({ state: 'success', message: 'APOD caricato con successo.' })
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        setApodStatus({ state: 'error', message: `Richiesta scaduta dopo ${timeoutMs / 1000}s.` })
+      } else {
+        setApodStatus({ state: 'error', message: `Errore durante il fetch: ${err.message}` })
+      }
+      setApodData(null)
+      clearTimeout(timeout)
+    }
   }
 
   return (

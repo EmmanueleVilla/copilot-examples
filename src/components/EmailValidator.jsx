@@ -2,14 +2,18 @@ import { useState } from 'react'
 
 // COMPLETION
 function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email)
 }
 
 export default function EmailValidator() {
   const [email, setEmail] = useState('')
+
   const [status, setStatus] = useState({ state: 'idle', message: 'Awaiting validation.' })
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     const result = validateEmail(email)
 
     if (result === true) {

@@ -16,7 +16,26 @@ export default function CsvParser() {
     }
 
     const lines = raw.split(/\r?\n/).filter((line) => line.trim().length > 0)
-    const rows = lines.map((line) => line.split(',').map((cell) => cell.trim()))
+    // CSV row parser that handles quoted fields with commas
+    function parseCsvRow(line) {
+      const result = []
+      let current = ''
+      let inQuotes = false
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i]
+        if (char === '"' && (i === 0 || line[i - 1] !== '\\')) {
+          inQuotes = !inQuotes
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim().replace(/^"|"$/g, '').replace(/""/g, '"'))
+          current = ''
+        } else {
+          current += char
+        }
+      }
+      result.push(current.trim().replace(/^"|"$/g, '').replace(/""/g, '"'))
+      return result
+    }
+    const rows = lines.map(parseCsvRow)
 
     if (rows.length === 0) {
       setCsvStatus({ state: 'error', message: 'No rows found.' })
