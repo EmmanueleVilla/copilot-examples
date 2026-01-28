@@ -30,11 +30,7 @@ export default function PasswordStrength() {
   const [showPassword, setShowPassword] = useState(false)
   const [result, setResult] = useState(null)
 
-  const handleCheck = (event) => {
-    event.preventDefault()
-    const strength = checkPasswordStrength(password)
-    setResult(strength)
-  }
+
 
   return (
     <section id="password" className="card">
@@ -46,7 +42,7 @@ export default function PasswordStrength() {
         </p>
       </header>
 
-      <form className="form" onSubmit={handleCheck} noValidate>
+      <div className="form">
         <label className="label" htmlFor="password-input">
           Password
         </label>
@@ -66,12 +62,13 @@ export default function PasswordStrength() {
               }
             }}
             placeholder="Enter a password"
-            autoComplete="new-password"
+            autoComplete="off"
             style={{ paddingRight: '100px' }}
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
+            aria-label="Toggle password visibility"
             style={{
               position: 'absolute',
               right: '12px',
@@ -89,15 +86,10 @@ export default function PasswordStrength() {
           </button>
         </div>
 
-        <div className="button-row">
-          <button type="submit" className="button">
-            Check Strength
-          </button>
-        </div>
-      </form>
+      </div>
 
       {result && (
-        <div className="password-result" style={{ marginTop: '16px' }}>
+        <div className="password-result" role="region" aria-label="Password strength result" style={{ marginTop: '16px' }}>
           <div 
             className="strength-bar" 
             style={{
