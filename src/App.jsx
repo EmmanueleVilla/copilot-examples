@@ -4,6 +4,7 @@ import CsvParser from './components/CsvParser'
 import MergeSort from './components/MergeSort'
 import ProcessNumbers from './components/ProcessNumbers'
 import ApodFetcher from './components/ApodFetcher'
+import PasswordStrength from './components/PasswordStrength'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <MergeSort />
         <ProcessNumbers />
         <ApodFetcher />
+        <PasswordStrength />
 
         <section id="tests" className="card">
           <header className="card-header">
